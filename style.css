@@ -2,6 +2,10 @@
 
 :root {
     --header-color: #3e3e3e;
+    --white-color: #fff;
+    --bg-color1: #fafafa;
+    --bg-color2: #e7746f;
+    --bg-color3: #43B3E0;
 }
 
 /* default */
@@ -31,6 +35,7 @@ body {
     position: fixed;
     top: 0%;
     left: 0%;
+    z-index: 10;
     width: 100%;
     height: 3.5rem;
     line-height: 3.5rem;
@@ -46,7 +51,7 @@ body {
 
 .nav>ul a {
     text-decoration: none;
-    color: #fff;
+    color: var(--white-color);
     font-weight: 600;
     padding: 0.8rem 1.2rem;
     border-radius: 0.5rem;
@@ -61,7 +66,7 @@ body {
 article.wrapper {
     height: 100vh;
     width: 100vw;
-    background-color: #fff;
+    background-color: var(--white-color);
     display: flex;
     align-items: center;
 }
@@ -73,8 +78,8 @@ div.container {
 }
 
 div.myphoto img {
-    width: 310px; /* temp */
-    height: 310px; 
+    width: 20.67rem; /* temp */
+    height: 20.67rem; 
     border-radius: 50%;
     
 }
@@ -98,14 +103,14 @@ div.info p {
 
 div.info a.button {
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--white-color);
     font-weight: 700;
     padding: 0.5rem 2rem;
     letter-spacing: -0.025em;
     text-shadow: -1px -1px 0.5px rgb(0 0 0 / 50%);
     text-decoration: none;
     background-image: url(./assets/images/bg.png), -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-    background-color: #43B3E0;
+    background-color: var(--bg-color3);
     border-radius: 0.5rem;
     box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 50%), inset 0px 2px 1px 0px rgb(255 255 255 / 75%);
     display: inline-block;
@@ -116,21 +121,49 @@ div.info a.button {
 
 /* project section */
 article.wrapper2 {
-    background-color: #fafafa;
+    background-color: var(--bg-color1);
     background-image: url(./assets/images/bg.png);
     box-shadow: inset 0px 1px 0px 0px rgb(0 0 0 / 5%), inset 0px 2px 3px 0px rgb(0 0 0 / 10%);
     padding: 4rem 1.5rem;
+    text-align: center;
 }
 
 h2.project-heading {
     font-weight: 700;
     color: var(--header-color);
-    text-align: center;
     margin-bottom : 4rem;
 }
 
-div.project-grid {
+div.projects-grid {
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 1.5rem;
+    justify-content: center;
+    gap: 2rem;
+}
+
+div.projects-grid a {
+    text-decoration: none;
+    box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 15%), 0px 2px 3px 0px rgb(0 0 0 / 10%);
+}
+
+div.projects-grid img {
+    object-fit: cover;
+    display: block;
+    border-radius: 0.1rem 0.1rem 0 0;
+}
+
+div.projects-grid p {
+    background-color: var(--bg-color2);
+    color: var(--white-color);
+    padding: 1.2rem;
+    border-radius: 0 0 0.2rem 0.2rem;
+}
+
+div.projects-grid span {
+    color: var(--bg-color2);
+    transition: 0.3s ease-out;
+}
+
+div.projects-grid a:hover span {
+    color: var(--white-color);
 }
