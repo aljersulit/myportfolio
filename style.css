@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Raleway:wght@700&display=swap');
 
 :root {
     --header-color: #3e3e3e;
     --white-color: #fff;
     --bg-color1: #fafafa;
     --bg-color2: #e7746f;
-    --bg-color3: #43B3E0;
+    --bg-color3: hsl(197, 72%, 57%);
+    --bg-color3-hover: hsl(197, 72%, 62%);
+    --bg-color4: #303841;
+    --bg-color5: hsl(0, 0%, 27%);
+    --bg-color5-hover: hsl(0, 0%, 32%);
 }
 
 /* default */
@@ -19,6 +24,7 @@
 
 html {
     font-size: 15px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -29,8 +35,13 @@ body {
 }
 
 /* navigation bar */
+.wrapper {
+    background-image: url(./assets/images/bg.png);
+    box-shadow: inset 0px 1px 0px 0px rgb(0 0 0 / 5%), inset 0px 2px 3px 0px rgb(0 0 0 / 10%);
+}
+
 .nav {
-    background-color: #282828;
+    background-color: var(--bg-color4);
     text-align: center;
     position: fixed;
     top: 0%;
@@ -46,7 +57,7 @@ body {
     justify-content: center;
     list-style-type: none;
     padding-inline-start: 0;
-    gap: 0.2rem;
+    gap: 5rem;
 }
 
 .nav>ul a {
@@ -63,7 +74,7 @@ body {
 }
 
 /* about section */
-article.wrapper {
+article.style1 {
     height: 100vh;
     width: 100vw;
     background-color: var(--white-color);
@@ -73,19 +84,19 @@ article.wrapper {
 
 div.container {
     display: flex;
-    width: 85%;
+    max-width: 72rem;
     margin: 0 auto;
 }
 
 div.myphoto img {
-    width: 20.67rem; /* temp */
+    width: 20.67rem;
     height: 20.67rem; 
     border-radius: 50%;
     
 }
 
 div.info {
-    padding: 0.2rem 1.4rem;
+    padding: 0.2rem 1.7rem;
     margin-left: 1.5rem;
 }
 
@@ -101,35 +112,45 @@ div.info p {
     margin-top: 1.3rem;
 }
 
-div.info a.button {
-    font-size: 1.5rem;
+.button {
     color: var(--white-color);
     font-weight: 700;
-    padding: 0.5rem 2rem;
     letter-spacing: -0.025em;
     text-shadow: -1px -1px 0.5px rgb(0 0 0 / 50%);
     text-decoration: none;
     background-image: url(./assets/images/bg.png), -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-    background-color: var(--bg-color3);
     border-radius: 0.5rem;
     box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 50%), inset 0px 2px 1px 0px rgb(255 255 255 / 75%);
+    cursor: pointer;
+}
+
+#about a.button {
+    font-size: 1.5rem;
+    padding: 0.8rem 3.3rem;
     display: inline-block;
     position: relative;
-    cursor: pointer;
     top: 10%;
+    background-color: var(--bg-color3);
+    transition: 0.2s ease-out;
+}
+
+#about a.button:hover {
+    background-color: var(--bg-color3-hover);
 }
 
 /* project section */
-article.wrapper2 {
+article.style2 {
     background-color: var(--bg-color1);
-    background-image: url(./assets/images/bg.png);
-    box-shadow: inset 0px 1px 0px 0px rgb(0 0 0 / 5%), inset 0px 2px 3px 0px rgb(0 0 0 / 10%);
-    padding: 4rem 1.5rem;
+    padding: 6rem 1.5rem 4rem 1.5rem;
     text-align: center;
 }
 
-h2.project-heading {
+.heading {
+    font-size: 2em;
     font-weight: 700;
+}
+
+h2.portfolio {
     color: var(--header-color);
     margin-bottom : 4rem;
 }
@@ -162,8 +183,147 @@ div.projects-grid p {
 div.projects-grid span {
     color: var(--bg-color2);
     transition: 0.3s ease-out;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
 }
 
 div.projects-grid a:hover span {
     color: var(--white-color);
+}
+
+#portfolio a.button {
+    background-color: var(--bg-color3);
+    font-size: 1.6em;
+    padding: 0.8em 2em;
+    display: inline-block;
+    margin: 6rem 0 3em 0;
+    transition: 0.2s ease-out;
+}
+
+#portfolio a.button:hover {
+    background-color: var(--bg-color3-hover);
+}
+
+/* contact-section */
+article.style3 {
+    background-color: #303030;
+    color: #999;
+    text-shadow: -1px -1px 0px #181818;
+    text-align: center;
+    padding: 6rem 1.5rem 6rem 1.5rem;
+}
+
+article.style3 h2 {
+    color: var(--white-color);
+    margin-bottom: 4rem;
+}
+
+div.column {
+    width: 55rem;
+    margin: 0 auto;
+}
+
+div.form-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+div.form-control input, div.form-control textarea {
+    background-color: #282828;
+    padding: 0.75em;
+    border-radius: 0.5em;
+    border: none;
+    box-shadow: inset 0px 2px 3px 1px rgb(0 0 0 / 5%), 0px 1px 0px 0px rgb(255 255 255 / 3%);
+    color: #bbb;
+    display: block;
+    line-height: 1.85em;
+    letter-spacing: 0.15em;
+}
+
+div.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+div.row input {
+    width: 50%;
+}
+
+div.btn {
+    padding-top: 1.5rem;
+}
+
+#contact input.send,
+#contact input.clear {
+    width: 13rem;
+    padding: 1.2rem 0;
+    border: none;
+}
+
+#contact input.send {
+    background-color: var(--bg-color3);
+    transition: 0.2s ease-out;
+}
+
+#contact input.send:hover {
+    background-color: var(--bg-color3-hover);
+}
+
+#contact input.clear {
+    background-color: var(--bg-color5);
+    box-shadow: inset 0px 0px 0px 1px #242424, inset 0px 2px 1px 0px rgb(255 255 255 / 20%);
+    transition: 0.2s ease-out;
+}
+
+#contact input.clear:hover {
+    background-color: var(--bg-color5-hover);
+}
+
+#contact>form {
+    margin-bottom: 5rem;
+}
+
+hr {
+    border: 0;
+    border-top: solid 1px #444;
+    border-top-color: rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 1px 0px 0px rgb(255 255 255 / 10%);
+    height: 1px;
+    width: 55rem;
+    margin: 0 auto;
+}
+
+#contact h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    margin-top: 5rem;
+    margin-bottom: 0.5rem;
+}
+
+#contact p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+div.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+div.contact-links a {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease-out;
+}
+
+div.contact-links a:hover {
+    transform: translateY(0.2em);
 }
