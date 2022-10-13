@@ -81,7 +81,7 @@ article.style1 {
     background-color: var(--white-color);
     display: flex;
     align-items: center;
-    padding-left: 3rem;
+    padding: 5rem 0 3rem 3rem;
 }
 
 div.container {
@@ -342,6 +342,11 @@ div.contact-links a:hover {
 @media only screen and (max-width: 1280px) {
     html {
         font-size: 13px;
+    }
+
+    article.style1 {
+        padding-top: 9rem;
+        padding-bottom: 5rem;
     }
 
     article.style1, article.style2, article.style3 {
